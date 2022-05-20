@@ -3,19 +3,15 @@ package burger;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
 import praktikum.Burger;
 import praktikum.Ingredient;
+import praktikum.IngredientType;
 
-@RunWith(MockitoJUnitRunner.class)
+
 public class AddIngredientTest {
 
     private Burger burger;
 
-    @Mock
-    private Ingredient ingredient;
 
     @Before
     public void setUp() {
@@ -24,8 +20,11 @@ public class AddIngredientTest {
 
     @Test
     public void addIngredientTest() {
-        burger.addIngredient(ingredient);
-        int expectedCountOfIngredients = 1;
+        Ingredient ingredient1 = new Ingredient(IngredientType.FILLING, "Some bun", 34.f);
+        Ingredient ingredient2 = new Ingredient(IngredientType.SAUCE, "Some bun2", 35.3f);
+        burger.addIngredient(ingredient1);
+        burger.addIngredient(ingredient2);
+        int expectedCountOfIngredients = 2;
         int actualCountOfIngredients = burger.ingredients.size();
         Assert.assertEquals(expectedCountOfIngredients, actualCountOfIngredients);
     }

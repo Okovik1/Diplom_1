@@ -24,7 +24,8 @@ public class BunPriceTest {
     public static Object[][] BunTest() {
         return new Object[][]{
                 {3.4f, true},
-                {0.0f, true}
+                {0.0f, true},
+                {-10.3, false}
         };
     }
 

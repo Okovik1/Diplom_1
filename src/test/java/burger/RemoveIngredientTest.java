@@ -3,19 +3,15 @@ package burger;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
 import praktikum.Burger;
 import praktikum.Ingredient;
+import praktikum.IngredientType;
 
-@RunWith(MockitoJUnitRunner.class)
+
 public class RemoveIngredientTest {
 
     private Burger burger;
 
-    @Mock
-    private Ingredient ingredient;
 
     @Before
     public void setUp() {
@@ -25,6 +21,7 @@ public class RemoveIngredientTest {
 
     @Test
     public void removeIngredientTest() {
+        Ingredient ingredient = new Ingredient(IngredientType.FILLING, "sweet white bun", 32.9f);
         burger.addIngredient(ingredient);
         burger.removeIngredient(0);
 

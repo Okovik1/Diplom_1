@@ -23,7 +23,9 @@ public class BunNameTest {
     public static Object[][] BunTest() {
         return new Object[][]{
                 {"White sweet bun", true},
-                {"Булочка с корицей", true}
+                {"Булочка с корицей", true},
+                {" ", false},
+                {null, false}
         };
     }
 
